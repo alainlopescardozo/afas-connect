@@ -128,7 +128,7 @@ export default abstract class Connector {
       }
 
       if (this.AfasConfig.integrationId) {
-        config.headers.integrationId = this.AfasConfig.integrationId;
+        config.headers.IntegrationId = this.AfasConfig.integrationId;
       }
   
       const response = await fetch(url, config)
