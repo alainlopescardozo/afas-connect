@@ -120,12 +120,14 @@ export default class GetConnector extends Connector {
    */
   public async getOne(getConnectorName: string, config?: IFilterConfig): Promise<Record<string, any> | null> {
     try {
-      const response = await this.http(this.connectorUrl + getConnectorName + this.parseConfig({...config, skip: 0, take: 1} || {}), 'GET');
-      return response.rows[0] || null
+      const url = this.connectorUrl + getConnectorName + this.parseConfig({ ...(config || {}), skip: 0, take: 1 });
+      const response = await this.http(url, 'GET');
+      return response.rows?.[0] || null;
     } catch (error: any) {
-      throw new ProfitError('An error occured trying to Get one of ' + getConnectorName, error);
+      throw new ProfitError('An error occurred trying to Get one of ' + getConnectorName, error);
     }
   }
+
 
   /**
    * Fetch the metadata of a GetConnector

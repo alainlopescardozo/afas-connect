@@ -11,6 +11,7 @@ export declare class Profit {
     DataConnector: DataConnector;
     SoapConnector: SoapConnector;
     InsiteConnector: InsiteConnector;
+    IntegrationID: string | undefined;
     /**
      * @deprecated Please use DataConnector instead
      */

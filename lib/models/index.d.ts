@@ -62,6 +62,7 @@ export interface IAfasConfig {
     envType: TAfasConfigEnvType | EnvTypes;
     token: string;
     language?: TLanguages | Languages;
+    integrationId?: string;
 }
 export interface IAfasConnectorConfig extends IAfasConfig {
     type: 'rest' | 'soap';

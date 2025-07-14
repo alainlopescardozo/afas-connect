@@ -13,6 +13,7 @@ export class Profit {
   public DataConnector: DataConnector;
   public SoapConnector: SoapConnector;
   public InsiteConnector: InsiteConnector;
+  public IntegrationID: string | undefined;
 
   /**
    * @deprecated Please use DataConnector instead
@@ -26,7 +27,7 @@ export class Profit {
     this.DataConnector = new DataConnector(AfasConfig);
     this.SoapConnector = new SoapConnector(AfasConfig);
     this.InsiteConnector = new InsiteConnector(AfasConfig);
-
+    this.IntegrationID = AfasConfig.integrationId;
     this.CustomConnector = this.DataConnector;
   }
 

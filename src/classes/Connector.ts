@@ -126,6 +126,10 @@ export default abstract class Connector {
           config.headers[key] = customHeaders[key]
         }
       }
+
+      if (this.AfasConfig.integrationId) {
+        config.headers.integrationId = this.AfasConfig.integrationId;
+      }
   
       const response = await fetch(url, config)
       const rawBody = await response.text();
